@@ -1,32 +1,40 @@
-/* 整体部分 */ 
-::-webkit-scrollbar
-{
-  width: 22px;
-  height: 22px;
+:root {
+  --light-theme-color: #F6F4F2;
+  --dark-theme-color: #1B333B;
+  --page-height: 100vh;
+  --page-width: 100%;
 }
 
-/* 滑动轨道 */ 
-::-webkit-scrollbar-track
-{
-	border-radius: 0px;
-	background: none;
+@keyframes logo {
+  0% {
+    box-shadow: 0px 0px rgba(246, 244, 242, .8), 0px 0px 30px rgba(0,0,0,.15) inset;
+  }
+  50% {
+    box-shadow: 0px 0px rgba(246, 244, 242, .8), 0px 0px 30px rgba(255,255,255,.15) inset;
+  }
+  100% {
+    box-shadow: 0px 0px rgba(246, 244, 242, .8), 0px 0px 30px rgba(0,0,0,.15) inset;
+  }
 }
 
-/* 滑块 */
-::-webkit-scrollbar-thumb
-{
-  border: 1px #1B333B solid;
-  border-radius: 11px;
-  box-shadow: inset 0 0 5px #F6F4F2;
-	-webkit-box-shadow: inset 0 0 5px #F6F4F2;
-	background-color: #1B333B;
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-/* 滑块效果 */ 
-::-webkit-scrollbar-thumb:hover
-{
-  border-radius: 11px;
-  box-shadow: inset 0 0 5px #1B333B;
-	-webkit-box-shadow: inset 0 0 5px #1B333B;
-	background-color: #F6F4F2;
+body {
+  background-color: var(--dark-theme-color);
+  color: var(--light-theme-color);
+}
+
+.page__wrap {
+  height: var(--page-height);
+  width: var(--page-width);
+}
+.page__wrap:nth-child(2n) {
+  background-color: var(--light-theme-color);
+  color: var(--dark-theme-color);
+}
+.page__wrap:last-child {
+  height: 300px;
 }
